@@ -5,9 +5,7 @@ const { validateFormRegister, validateFormLogin } = require('../services/validat
 
 const maxAge = 3 * 24 * 60 * 60
 
-const renderHomepage = async (req, res) => {
-    res.render('index')
-}
+
 
 const renderRegister = (req, res) => {
     res.render('register')
@@ -86,17 +84,11 @@ const logoutUser = async (req, res) => {
     res.redirect('/')
 }
 
-const getUsers = async (req, res) => {
-    const user = await Users.find();
 
-    res.status(200).send(user)
-}
 module.exports = {
     registerUser,
     renderRegister,
     renderLogin,
-    renderHomepage,
     loginUser,
-    logoutUser,
-    getUsers
+    logoutUser
 }

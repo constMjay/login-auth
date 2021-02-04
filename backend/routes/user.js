@@ -1,12 +1,11 @@
 const express = require('express');
-const { checkUser } = require('../middleware/auth');
-const { registerUser, renderRegister, renderLogin, renderHomepage, loginUser, getUsers, logoutUser } = require('../controller/users.controller')
+const { registerUser, renderRegister, renderLogin, loginUser, logoutUser } = require('../controller/users.controller')
 const router = express.Router();
 
 /**
  * Render Routes
  */
-router.get('/', checkUser, renderHomepage)
+
 router.get('/register', renderRegister)
 router.get('/login', renderLogin)
 
@@ -16,7 +15,6 @@ router.get('/login', renderLogin)
  */
 router.post('/register', registerUser)
 router.post('/login', loginUser)
-router.get('/users', getUsers)
 router.get('/logout', logoutUser)
 /**
  * Cookies

@@ -1,9 +1,20 @@
 const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
+
 const dashboardPostSchema = new Schema({
-    postText: {
-        type: String,
+    title: {
+        type: String
+    },
+    text: {
+        type: String
+    },
+    articleImage: {
+        type: String
+    },
+    dateCreated: {
+        type: Date,
+        default: Date.now
     }
 })
 
