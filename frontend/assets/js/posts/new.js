@@ -10,6 +10,6 @@ $(document).ready(() => {
 
         const result = await response.json();
 
-        if (result) window.location.replace('/dashboard/post')
+        if (result) window.location.replace(`/dashboard/post/${result.slug}`)
     })
 })

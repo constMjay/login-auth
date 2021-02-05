@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
     <!-- Bootstrap Css -->
-    <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -61,7 +61,7 @@
             </div>
             <div class="card-body">
               <img
-                src="../<%= article.articleImage %>"
+                src="../../<%= article.articleImage %>"
                 alt="<%= article.articleImage %>"
                 class="img-fluid"
               />
@@ -71,10 +71,15 @@
               class="card-footer d-flex align-items-center justify-content-between"
             >
               <label class="m-0"
-                ><strong>Posted On:</strong><%= article.dateCreated %></label
+                ><strong>Posted On: </strong><%=
+                article.dateCreated.toLocaleDateString() %></label
               >
               <div>
-                <button class="btn btn-success btn-sm">Edit</button>
+                <a
+                  href="/dashboard/post/<%= article.slug %>"
+                  class="btn btn-success btn-sm"
+                  >View</a
+                >
                 <button class="btn btn-danger btn-sm">Delete</button>
               </div>
             </div>
@@ -84,7 +89,7 @@
       </div>
     </div>
     <!-- Scripts -->
-    <script src="../js/jQuery-3.5.1.js"></script>
-    <script src="../bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../js/jQuery-3.5.1.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
