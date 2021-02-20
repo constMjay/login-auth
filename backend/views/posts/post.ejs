@@ -52,44 +52,13 @@
         <a href="/dashboard/post/new" class="btn btn-primary">Create article</a>
       </div>
 
-      <div class="row">
-        <div class="col-xl-12">
-          <% if(articles) { %> <% articles.forEach((article) => { %>
-          <div class="card mt-2 mb-3">
-            <div class="card-header">
-              <h4 class="m-0"><%= article.title %></h4>
-            </div>
-            <div class="card-body">
-              <img
-                src="../../<%= article.articleImage %>"
-                alt="<%= article.articleImage %>"
-                class="img-fluid"
-              />
-              <p class="m-0"><%= article.text %></p>
-            </div>
-            <div
-              class="card-footer d-flex align-items-center justify-content-between"
-            >
-              <label class="m-0"
-                ><strong>Posted On: </strong><%=
-                article.dateCreated.toLocaleDateString() %></label
-              >
-              <div>
-                <a
-                  href="/dashboard/post/<%= article.slug %>"
-                  class="btn btn-success btn-sm"
-                  >View</a
-                >
-                <button class="btn btn-danger btn-sm">Delete</button>
-              </div>
-            </div>
-          </div>
-          <% }) %> <% } %>
-        </div>
+      <div class="row" id="allPosts">
+        <!-- All Post Here -->
       </div>
     </div>
     <!-- Scripts -->
     <script src="../../js/jQuery-3.5.1.js"></script>
     <script src="../../bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="module" src="../../js/posts/posts.js"></script>
   </body>
 </html>

@@ -25,11 +25,7 @@ usersSchema.methods.generateAuthToken = function (tokenExpiration) {
     const token = jwt.sign({ _id: this._id, email: this.email }, process.env.SECRET_KEY, { expiresIn: tokenExpiration })
     return token
 };
-// usersSchema.methods.loginAuth = async function (email, password) {
-//     const user = await this.findOne({ email: email });
 
-//     if(user)
-// };
 const Users = mongoose.model('Users', usersSchema);
 
 module.exports = {

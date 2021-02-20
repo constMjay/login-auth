@@ -36,7 +36,7 @@ const checkUser = (req, res, next) => {
                 res.locals.user = null
                 next();
             } else {
-                let user = await Users.findById(decodedToken._id)
+                let user = await Users.findById(decodedToken._id);
                 res.locals.user = user
                 next() //If error is not true then proceed to next middleware
             }

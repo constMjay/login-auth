@@ -13,7 +13,7 @@ dotenv.config()
  * Mongodb connection
  */
 const url = process.env.MONGODB_URL || process.env.URL
-mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
     .then(() => console.log("Connected to database!"))
     .catch(err => console.log(err))
 /**

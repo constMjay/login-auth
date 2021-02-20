@@ -14,9 +14,16 @@ const dashboardPostSchema = new Schema({
     articleImage: {
         type: String
     },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
+    postedBy: {
+        type: Object
+    },
     dateCreated: {
         type: Date,
-        default: Date.now
+        default: Date
     },
     slug: {
         type: String,

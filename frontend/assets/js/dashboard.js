@@ -6,7 +6,7 @@ $(document).ready(() => {
         const postTextVal = $('#postText').val()
         const postTitle = $('#postTitle').val()
 
-        console.log(postImage)
+        
         await fetch('/dashboard/post', {
             method: "POST",
             headers: {
